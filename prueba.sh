@@ -11,7 +11,9 @@ do
 	echo "Passing the input  data p1 to the executable"
 	$line  <  p1.in > $line.out
 	#diff $line.out p1R.pr
-	coounter = $(grep -c 10609 p1R.pr)	
+	#coounter = $(grep -c 10609 p1R.pr)
+	grep -c "10609" $line.out
+	echo $line	
 done
 # p2.in
 for line2 in $(sudo find . -name "*2.c.exe");
@@ -25,6 +27,7 @@ for line3 in $(sudo find . -name "*3.c.exe");
 do 
 	echo "Passing the input data p3 to tha executable"
 	$line3 < p3.in > $line3.out
+	
 done
 #p4.in
 for line4 in $(sudo find . -name "*4.c.exe");
@@ -32,5 +35,13 @@ do
 	echo "Passing the input data p4 to the executable"
 	$line4 < p4.in > $line4.out
 done
+
+#p5.in
+for line5 in $(sudo find . -name "*5.c.exe");
+do
+	echo "Passing the input data p5 to the executable"
+	$line5 < p5.in > $line5.out
+done
+
 
 
